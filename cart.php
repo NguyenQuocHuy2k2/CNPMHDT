@@ -69,7 +69,7 @@
                                                                 </td>
 
                                                                 <td class="product-price">
-                                                                    <span class="amount"><?php echo number_format($value['price']) ?>VND</span>
+                                                                    <span class="amount"><?php echo number_format($value['discount_price']) ?>VND</span>
                                                                 </td>
 
                                                                 <td class="product-quantity">
@@ -83,8 +83,8 @@
                                                                 </td>
 
                                                                 <td class="product-subtotal">
-                                                                    <span class="amount"><?php echo number_format($value['price'] * $qty);
-                                                                    $total += $value['price'] * $qty; ?>VND</span>
+                                                                    <span class="amount"><?php echo number_format($value['discount_price'] * $qty);
+                                                                    $total += $value['discount_price'] * $qty; ?>VND</span>
                                                                 </td>
                                                             </tr>
 

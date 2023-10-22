@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
     foreach ($ids_array as $id) :
         $getProductById = $product->getProductById($id);
         foreach ($getProductById as $value) :
-            $price = $value['price'];
+            $price = $value['discount_price'];
         endforeach;
         $quantity = $_SESSION['cart'][$id]; 
         $total = $price * $quantity;
@@ -38,7 +38,7 @@ if (isset($_POST['submit'])) {
         $getProductById = $product->getProductById($id); 
         foreach ($getProductById as $value) :
             $pro_name = $value['name'];
-            $price = $value['price'];
+            $price = $value['discount_price'];
             $type_id = $value['type_id'];
             $pro_image = $value['pro_image'];
         endforeach;

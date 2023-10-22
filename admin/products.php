@@ -71,28 +71,31 @@ echo '<script>window.history.pushState({}, document.title, "/" + "/admin/product
               <th style="width: 15%">
                 Name
               </th>
-              <th style="width: 10%">
+              <th style="width: 5%">
                 Image
               </th>
-              <th style="width: 10%">
+              <th style="width: 15%">
                 Description
               </th>
-              <th>
+              <th style="width: 8%">
                 Price
               </th>
-              <th style="width: 8%" class="text-center">
+              <th style="width: 8%">
+                Discount price
+              </th>
+              <th style="width: 3%">
                 Manufactures
               </th>
-              <th style="width: 8%" class="text-center">
+              <th style="width: 6%">
                 Protype
               </th>
-              <th style="width: 8%" class="text-center">
+              <th style="width: 3%">
                 Feature
               </th>
-              <th style="width: 8%" class="text-center">
+              <th style="width: 8%">
                 Created_at
               </th>
-              <th style="width: 14%">
+              <th style="width: 8%" class="text-center">
                 Action
               </th>
             </tr>
@@ -114,7 +117,8 @@ echo '<script>window.history.pushState({}, document.title, "/" + "/admin/product
                   <?php endif ?>
 
                 </td>
-                <td><?php echo number_format($value['price']) ?> VND</td>
+                <td><?php echo number_format($value['price']) ?>đ</td>
+                <td><?php echo number_format($value['discount_price']) ?>đ</td>
                 <td class="project_progress">
                   <?php echo $value['manu_name'] ?>
                 </td>
@@ -132,7 +136,7 @@ echo '<script>window.history.pushState({}, document.title, "/" + "/admin/product
                   <?php echo $value['created_at'] ?>
                 </td>
                 <td class="project-actions text-right">
-                  <a class="btn btn-info btn-sm" href="editPropduct.php?id=<?php echo $value['id']; ?>">
+                  <a class="btn btn-info btn-sm" style="margin-bottom: 10px;" href="editPropduct.php?id=<?php echo $value['id']; ?>">
                     <i class="fas fa-pencil-alt">
                     </i>
                     Edit

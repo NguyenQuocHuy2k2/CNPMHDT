@@ -3,9 +3,6 @@
 <body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
     <div class="wrapper">
-
-
-
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -76,13 +73,19 @@
                                         <textarea name="desc" id="summernote" class="form-control" rows="4" required> </textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputClientCompany">Price</label>
-                                        <input type="text" id="inputClientCompany" class="form-control" name="price" required>
+                                        <label for="inputPrice">Price</label>
+                                        <input type="text" id="inputPrice" class="form-control" name="price" onblur="checkPrice(this)">
+                                        <p class="help-block">Giá gốc phải lớn hơn 10.000đ</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputDiscountPrice">Discount price</label>
+                                        <input type="text" id="inputDiscountPrice" class="form-control" name="discount_price" required>
+                                        <p class="help-block">Giá Discount phải bé hơn giá gốc</p>
                                     </div>
                                     <div class="form-group">
                                         <label for="inputStatus">Feature</label>
                                         <select id="inputStatus" class="form-control custom-select" name="feature" required>
-                                            <option selected disabled>Select one</option>
+                                            <option selected disabled>Tùy chọn</option>
                                             <option value="1">Nổi bật</option>
                                             <option value="0">Không nổi bật</option>
                                         </select>

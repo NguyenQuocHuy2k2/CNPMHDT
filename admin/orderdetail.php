@@ -85,7 +85,7 @@ echo '<script>window.history.pushState({}, document.title, "/" + "/admin/product
                                 <td><img style="width:102px" class="text-center" src="../img/<?php echo $value['product_image'] ?>" alt=""></td>
                                 <td class="text-center" style="width: 5%"><?php echo $value['product_name'] ?></td>
                                 <td class="text-center" style="width: 5%"><?php echo $value3['type_name'] ?></td>
-                                <td class="text-center" style="width: 30%"><?php echo number_format($value['product_price'],0,',','.')?>đ</td>
+                                <td class="text-center" style="width: 30%"><?php echo number_format($value['discount_price'],0,',','.')?>đ</td>
                                 <td class="text-center">x <?php echo $value['product_quantity']?></td>
                                 <td style="width: 5%"><?php echo number_format($value['cost'],0,',','.')?>đ</td>
                             </tr>

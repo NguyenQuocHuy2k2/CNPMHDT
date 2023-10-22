@@ -38,16 +38,16 @@ class Product extends Db
         $item = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $item; //return an array
     }
-    public function updateProductNotImage($name, $manu, $type_id, $price, $desc, $feature, $id)
+    public function updateProductNotImage($name, $manu, $type_id, $price, $discount_price, $desc, $feature, $id)
     {
-        $sql = self::$connection->prepare("UPDATE `products` SET `name`=?,`manu_id`=?,`type_id`=?,`price`=?,`description`=?,`feature`=?, `created_at` = NOW() WHERE `id`=?");
-        $sql->bind_param("siiisii", $name, $manu, $type_id, $price, $desc, $feature, $id);
+        $sql = self::$connection->prepare("UPDATE `products` SET `name`=?,`manu_id`=?,`type_id`=?,`price`=?,`discount_price`=?,`description`=?,`feature`=?, `created_at` = NOW() WHERE `id`=?");
+        $sql->bind_param("siiiisii", $name, $manu, $type_id, $price, $discount_price, $desc, $feature, $id);
         return $sql->execute(); //return an object
     }
-    public function addProduct($name, $manu, $type_id, $price, $image, $desc, $feature)
+    public function addProduct($name, $manu, $type_id, $price, $discount_price, $image, $desc, $feature)
     {
-        $sql = self::$connection->prepare("INSERT INTO `products`(`name`, `manu_id`, `type_id`, `price`, `pro_image`, `description`, `feature`) VALUES(?,?,?,?,?,?,?)");
-        $sql->bind_param("siiissi", $name, $manu, $type_id, $price, $image, $desc, $feature);
+        $sql = self::$connection->prepare("INSERT INTO `products`(`name`, `manu_id`, `type_id`, `price`, `discount_price`, `pro_image`, `description`, `feature`) VALUES(?,?,?,?,?,?,?,?)");
+        $sql->bind_param("siiiissi", $name, $manu, $type_id, $price, $discount_price, $image, $desc, $feature);
         return $sql->execute(); //return an object
     }
     public function deleteProduct($id)
@@ -57,10 +57,10 @@ class Product extends Db
         return $sql->execute();
     }
 
-    public function updateProduct($name, $manu, $type_id, $price, $image, $desc, $feature, $id)
+    public function updateProduct($name, $manu, $type_id, $price, $discount_price, $image, $desc, $feature, $id)
     {
-        $sql = self::$connection->prepare("UPDATE `products` SET `name`=?,`manu_id`=?,`type_id`=?,`price`=?,`pro_image`=?,`description`=?,`feature`=?,`created_at` = NOW() WHERE `id`=?");
-        $sql->bind_param("siiissii", $name, $manu, $type_id, $price, $image, $desc, $feature, $id);
+        $sql = self::$connection->prepare("UPDATE `products` SET `name`=?,`manu_id`=?,`type_id`=?,`price`=?,`discount_price`=?,`pro_image`=?,`description`=?,`feature`=?,`created_at` = NOW() WHERE `id`=?");
+        $sql->bind_param("siiissii", $name, $manu, $type_id, $price ,$discount_price, $image, $desc, $feature, $id);
         return $sql->execute(); //return an object
     }
     public function getAllIDProduct()

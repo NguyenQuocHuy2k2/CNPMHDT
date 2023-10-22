@@ -18,7 +18,7 @@ class OrderDetail extends Db
     }
     public function addOrderDetail($order_id, $product_name, $product_price, $product_quantity, $cost, $product_id, $type_id, $product_image)
     {
-        $sql = self::$connection->prepare("INSERT INTO `order_details`(`order_id`, `product_name`,`product_price`,`product_quantity`, `cost`, `product_id`, `type_id`, `product_image`) VALUES (?,?,?,?,?,?,?,?)");
+        $sql = self::$connection->prepare("INSERT INTO `order_details`(`order_id`, `product_name`,`discount_price`,`product_quantity`, `cost`, `product_id`, `type_id`, `product_image`) VALUES (?,?,?,?,?,?,?,?)");
         $sql->bind_param("isiiiiis", $order_id, $product_name, $product_price, $product_quantity, $cost, $product_id, $type_id, $product_image);
         $sql->execute();
     }

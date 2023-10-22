@@ -15,6 +15,7 @@ if (isset($_POST['submit'])) {
     $manu_id = $_POST['manu'];
     $type_id = $_POST['type'];
     $price = $_POST['price'];
+    $discount_price = $_POST['discount_price'];
     $desc = $_POST['desc'];
     $image = $_FILES['image']['name'];
     $feature = $_POST['feature'];
@@ -32,7 +33,7 @@ if (isset($_POST['submit'])) {
 
 
     if ($imageFileType == 'jpg') {
-        $product->addProduct($name, $manu_id, $type_id, $price, $image, $desc,  $feature);
+        $product->addProduct($name, $manu_id, $type_id, $price, $discount_price, $image, $desc,  $feature);
         move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
         header('location:products.php?status=ac');
     } else {

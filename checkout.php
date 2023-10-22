@@ -106,7 +106,7 @@ include "headeruser.php"; ?>
 										</div>
 										<div style="max-width: 440px;">
 											<strong>
-												<?php echo number_format($value['price'],0,',','.')?> đ
+												<?php echo number_format($value['discount_price'],0,',','.')?> đ
 											</strong>
 										</div>
 									</div>
@@ -124,11 +124,11 @@ include "headeruser.php"; ?>
 										</div>
 										<div>
 											<strong class="order-cash-total">
-												<?php echo number_format($_SESSION['cart'][$value['id']] * $value['price'],0,',','.') ?> đ
+												<?php echo number_format($_SESSION['cart'][$value['id']] * $value['discount_price'],0,',','.') ?> đ
 											</strong>
 										</div>
 									</div>
-									<?php $total_cost += ($_SESSION['cart'][$value['id']] * $value['price']) ?>
+									<?php $total_cost += ($_SESSION['cart'][$value['id']] * $value['discount_price']) ?>
 									<hr>
 									<?php	
 										endif;
